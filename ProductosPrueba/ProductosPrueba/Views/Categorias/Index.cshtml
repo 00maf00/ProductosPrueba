@@ -1,17 +1,21 @@
-﻿@model IEnumerable<ProductosPrueba.Modelos.Zona>
+﻿@model IEnumerable<ProductosPrueba.Modelos.Categoria>
 
+@{
+    var parametroZona = (ProductosPrueba.Modelos.Zona)ViewBag.Zona;
+}
 
 <div class="mail-box">
-    <h2>Zonas</h2>
+    <h3>Zona: @parametroZona.NombreZona</h3>
+    <h2>Categorias</h2>
     <p>
-        <a asp-action="Create" class="btn btn-primary info-dialog-window">Nuevo Registro</a>
+        <a asp-action="Create" asp-route-idZona="@parametroZona.Id" class="btn btn-primary info-dialog-window">Nuevo Registro</a>
     </p>
     <div class="table-responsive table-sm table-hover">
         <table id="example" class="table table-hover table-mail">
             <thead class="table-active">
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.NombreZona)
+                        @Html.DisplayNameFor(model => model.NombreCategoria)
                     </th>
                     <th></th>
                 </tr>
@@ -21,17 +25,17 @@
                 {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.NombreZona)
+                            @Html.DisplayFor(modelItem => item.NombreCategoria)
                         </td>
                         <td>
                             <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning infoObser-dialog-window">Editar</a>
-                            <a data-id="@item.Id" class="btn btn-danger delete-dialog-window">Eliminar</a>
-                            <a asp-controller="Categorias" asp-action="Index" asp-route-id="@item.Id" class="btn btn-info">Categorías</a>
+                            <a data-id="@item.Id" class="btn btn-danger delete-dialog-window">Eliminar</a>                           
                         </td>
                     </tr>
                 }
             </tbody>
         </table>
+        <a asp-controller="Zonas" class="btn btn-dark" asp-action="Index">Regresar a la lista</a>
     </div>
 </div>
 
@@ -43,7 +47,7 @@
                     <span aria-hidden="true">×</span>
                     <span class="sr-only">Close</span>
                 </button>
-                <h2 class="modal-title">Eliminar Zona</h2>
+                <h2 class="modal-title">Eliminar Categoria</h2>
             </div>
             <div class="modal-body">
                 <div class="text-center">
@@ -65,10 +69,9 @@
 
     <script>
         $("body").on("click", "a.delete-dialog-window", null, function (e) {
-            var htmlContent = '<br /><button type="button" id="btnNo" class="btn btn-danger" style="background-color:#da2213;color:white;" data-dismiss="modal" aria-hidden="true">No</button>&nbsp&nbsp<a href="@Url.Action("Delete", "Zonas")/' + $(this).data('id') + '" class="btn btn-default">Si</a>';
+            var htmlContent = '<br /><button type="button" id="btnNo" class="btn btn-danger" style="background-color:#da2213;color:white;" data-dismiss="modal" aria-hidden="true">No</button>&nbsp&nbsp<a href="@Url.Action("Delete", "Categorias")/' + $(this).data('id') + '" class="btn btn-default">Si</a>';
             $("#response").html(htmlContent);
             $('#Anular').modal('show');
         });
     </script>
 }
-
