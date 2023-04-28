@@ -1,8 +1,8 @@
-﻿@model IEnumerable<ProductosPrueba.Modelos.Proveedor>
+﻿@model IEnumerable<ProductosPrueba.Modelos.Productos>
 
 
 <div class="mail-box">
-    <h2>Proveedores</h2>
+    <h2>Zonas</h2>
     <p>
         <a asp-action="Create" class="btn btn-primary info-dialog-window">Nuevo Registro</a>
     </p>
@@ -11,7 +11,7 @@
             <thead class="table-active">
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.NombreProveedor)
+                        @Html.DisplayNameFor(model => model.NombreProducto)
                     </th>
                     <th></th>
                 </tr>
@@ -21,19 +21,7 @@
                 {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.NombreProveedor)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Ruc)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Telefono)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Direccion)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Estado)
+                            @Html.DisplayFor(modelItem => item.NombreProducto)
                         </td>
                         <td>
                             <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning infoObser-dialog-window">Editar</a>

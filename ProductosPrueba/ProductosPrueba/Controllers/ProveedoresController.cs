@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProductosPrueba.Data;
+using ProductosPrueba.Modelos;
 
 namespace ProductosPrueba.Controllers
 {
@@ -24,5 +25,15 @@ namespace ProductosPrueba.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(Proveedor model)
+        {
+            await _context.AddAsync(model);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        //cyp
     }
 }

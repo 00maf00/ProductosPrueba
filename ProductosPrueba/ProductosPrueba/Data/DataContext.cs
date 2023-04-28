@@ -13,6 +13,7 @@ namespace ProductosPrueba.Data
         }
 
         public DbSet<Proveedor> Proveedores { get; set; }
+        public DbSet<Productos> Productos { get; set; }
         public DbSet<Zona> Zonas { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
     }
