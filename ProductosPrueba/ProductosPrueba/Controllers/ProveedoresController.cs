@@ -34,6 +34,23 @@ namespace ProductosPrueba.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //cyp
+        public async Task<IActionResult> Edit(int id)
+        {
+            var proveedor = await _context.Proveedores.FindAsync(id);
+            return View(proveedor);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(Proveedor model)
+        {
+            var modelOld = await _context.Proveedores.FindAsync(model.Id);
+            modelOld.NombreProveedor = model.NombreProveedor;
+            modelOld.Ruc=model.Ruc;
+            modelOld.Telefono=model.Telefono;
+            modelOld.Direccion=model.Direccion;
+            _context.Update(modelOld);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

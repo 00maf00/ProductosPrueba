@@ -8,9 +8,17 @@
                 <div class="form-group">
                     <div class="input text">
                         <label asp-for="NombreProveedor" class="control-label"></label>
-                        <label asp-for="Ruc" class="control-label"></label>
                         <input asp-for="NombreProveedor" class="form-control" required />
                         <span asp-validation-for="NombreProveedor" class="text-danger"></span>
+                        <label asp-for="Ruc" class="control-label"></label>
+                        <input asp-for="Ruc" class="form-control" required />
+                        <span asp-validation-for="Ruc" class="text-danger"></span>
+                        <label asp-for="Telefono" class="control-label"></label>
+                        <input asp-for="Telefono" class="form-control" required />
+                        <span asp-validation-for="Telefono" class="text-danger"></span>
+                        <label asp-for="Direccion" class="control-label"></label>
+                        <input asp-for="Direccion" class="form-control" required />
+                        <span asp-validation-for="Direccion" class="text-danger"></span>
                     </div>
                 </div>
             </div>
