@@ -16,6 +16,8 @@ namespace ProductosPrueba.Data
         public DbSet<Productos> Productos { get; set; }
         public DbSet<Zona> Zonas { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Compras> Compras { get; set; }
+        public DbSet <PR_COMPRAS_MMR> PR_COMPRAS_MMR { get; set; }
     }
 }
 

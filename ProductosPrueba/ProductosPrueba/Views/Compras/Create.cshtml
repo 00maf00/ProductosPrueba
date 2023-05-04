@@ -1,0 +1,87 @@
+﻿@model ProductosPrueba.Modelos.Compras
+
+
+<div class="ibox-content">
+    <div class="row">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col col-sm-12">
+                <div class="form-group">
+                    <div class="input text">
+                        <label asp-for="Fecha" class="control-label"></label>
+                        <input asp-for="Fecha" class="form-control" type="date" required />
+                        <span asp-validation-for="Fecha" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-sm-12">
+                <div class="form-group">
+                    <div class="input text">
+                        <label asp-for="IdZona" class="control-label"></label>
+                        <input asp-for="IdZona" class="form-control" required />
+                        <span asp-validation-for="IdZona" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-sm-12">
+                <div class="form-group">
+                    <div class="input text">
+                        <label asp-for="IdCategorias" class="control-label"></label>
+                        <input asp-for="IdCategorias" class="form-control" required />
+                        <span asp-validation-for="IdCategorias" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-sm-12">
+                <div class="form-group">
+                    <div class="input text">
+                        <label asp-for="IdProducto" class="control-label"></label>
+                        <input asp-for="IdProducto" class="form-control" required />
+                        <span asp-validation-for="IdProducto" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-sm-12">
+                <div class="form-group">
+                    <div class="input text">
+                        <label asp-for="IdTrabajador" class="control-label"></label>
+                        <input asp-for="IdTrabajador" class="form-control" required />
+                        <span asp-validation-for="IdTrabajador" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-sm-12">
+                <div class="form-group">
+                    <div class="input text">
+                        <label asp-for="Cantidad" class="control-label"></label>
+                        <input asp-for="Cantidad" class="form-control" required />
+                        <span asp-validation-for="Cantidad" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-sm-12">
+                <div class="form-group">
+                    <div class="input text">
+                        <label asp-for="Boleta" class="control-label"></label>
+                        <input asp-for="Boleta" class="form-control" required />
+                        <span asp-validation-for="Boleta" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-sm-12">
+                <div class="form-group">
+                    <div class="input text">
+                        <label asp-for="Observaciones" class="control-label"></label>
+                        <textarea asp-for="Observaciones" class="form-control" required ></textarea>
+                        <span asp-validation-for="Observaciones" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-sm-12 text-right">
+                <div class="form-group">
+                    <input type="submit" value="Guardar" class="btn btn-success" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

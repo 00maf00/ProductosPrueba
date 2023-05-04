@@ -14,9 +14,9 @@ namespace ProductosPrueba.Modelos
         [Required]
         public string UnidadMedida { get; set; } = string.Empty;
         [Required]
-        public double Precio { get; set; }
+        public decimal Precio { get; set; }
         [Required]
-        public int Stock { get; set; }
+        public decimal Stock { get; set; }
         [Required]
         public DateTime FechaVencimiento { get; set; }
         [Required]
